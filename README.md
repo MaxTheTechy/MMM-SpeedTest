@@ -13,7 +13,7 @@ Network Connection Status (ping, download, upload) Module for MagicMirror
 
 ## Installation
 
-1. Clone this repo into `~/MagicMirror/modules` directory.
+1. Clone this repo into `~/MagicMirror/modules` directory. git clone https://github.com/MaxTheTechy/MMM-SpeedTest 
 2. Go to `~/MagicMirror/modules/MMM-SpeedTest` directory and do `npm install`
 3. Configure your `~/MagicMirror/config/config.js`:
 
