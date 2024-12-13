@@ -18,12 +18,15 @@ Network Connection Status (ping, download, upload) Module for MagicMirror
 3. Configure your `~/MagicMirror/config/config.js`:
 
     ```
-    {
-        module: 'MMM-SpeedTest',
-        position: 'bottom_left',
-        config: {
-        }
-    }
+     {
+          module: "MMM-SpeedTest",
+          position: "bottom_left", // Choose the desired position
+          config: {
+            updateInterval: 2 * 60 * 1000, // 2 minutes
+            debug: true // Enable debugging
+                  }
+      },
+
     ```
 
 ## Config Options
