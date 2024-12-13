@@ -46,7 +46,10 @@ Welcome to the MMM-SpeedTest wiki!
 
 
 if for some reasong your MagicMirror 2 failes to laod and on the logs you have something like below 
-    ```
+    \`\`\`javascript
+console.log("Hello, world!");
+\`\`\`
+
 
 ##
 /home/max/.pm2/logs/mm-error.log last 15 lines:
