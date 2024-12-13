@@ -53,11 +53,8 @@ Welcome to the MMM-SpeedTest wiki!
 
 
 if for some reasong your MagicMirror 2 failes to laod and on the logs you have something like below 
-    \`\`\`javascript
-console.log("Hello, world!");
-\`\`\`
 
-
+```bash
 ##
 /home/max/.pm2/logs/mm-error.log last 15 lines:
 0|mm       |     at Object.<anonymous> (/home/max/MagicMirror/modules/MMM-SpeedTest/node_helper.js:3:19)
@@ -76,8 +73,7 @@ console.log("Hello, world!");
 0|mm       | [24745:1213/122734.022577:ERROR:bus.cc(407)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
 0|mm       | [24745:1213/122734.022801:ERROR:bus.cc(407)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
 
-    ```
-
+```
 
 The error indicates that the lzma-native dependency required by the speedtest-net package is missing or not properly built for your environment. This is a common issue, especially on ARM-based devices like the Raspberry Pi when using electron.
 
@@ -87,9 +83,9 @@ Steps to Resolve
 You need to rebuild lzma-native for electron. Run the following commands in your MagicMirror directory:
 
     ```bash
-cd ~/MagicMirror
-npm install
-npm rebuild --runtime=electron --target=$(node -p "require('electron/package.json').version") --disturl=https://electronjs.org/headers --abi=$(node -p "process.versions.modules")
+    cd ~/MagicMirror
+    npm install
+    npm rebuild --runtime=electron --target=$(node -p "require('electron/package.json').version") --disturl=https://electronjs.org/headers --abi=$(node -p "process.versions.modules")
     ```
 
 
@@ -97,8 +93,8 @@ npm rebuild --runtime=electron --target=$(node -p "require('electron/package.jso
 If rebuilding doesn't work, manually install lzma-native:
 
     ```bash
-cd ~/MagicMirror
-npm install lzma-native
+    cd ~/MagicMirror
+    npm install lzma-native
     ```
 
 
@@ -106,15 +102,14 @@ npm install lzma-native
 Check the version of electron used by MagicMirror to ensure compatibility with lzma-native. Run:
 
     ```
-cd ~/MagicMirror
-npx electron --version
+    cd ~/MagicMirror
+    npx electron --version
     ```
 
 
 If the version is outdated, you may need to update electron. For example:
     ```
-
-npm install electron@latest
+    npm install electron@latest
     ```
 
 After updating, rebuild native modules again.
@@ -123,9 +118,8 @@ After updating, rebuild native modules again.
 ## 5. Check Logs
 After performing the above steps, restart MagicMirror and monitor the logs for updates:
     ```
-
-pm2 restart mm
-tail -f ~/.pm2/logs/mm-error.log
+    pm2 restart mm
+    tail -f ~/.pm2/logs/mm-error.log
     ```
 
 
