@@ -79,7 +79,7 @@ Steps to Resolve
 1. Rebuild Native Modules
 You need to rebuild lzma-native for electron. Run the following commands in your MagicMirror directory:
 
-    ```
+    ```bash
 cd ~/MagicMirror
 npm install
 npm rebuild --runtime=electron --target=$(node -p "require('electron/package.json').version") --disturl=https://electronjs.org/headers --abi=$(node -p "process.versions.modules")
@@ -89,7 +89,7 @@ npm rebuild --runtime=electron --target=$(node -p "require('electron/package.jso
 2. Manually Install lzma-native
 If rebuilding doesn't work, manually install lzma-native:
 
-    ```
+    ```bash
 cd ~/MagicMirror
 npm install lzma-native
     ```
