@@ -28,7 +28,7 @@ Network Connection Status (ping, download, upload) Module for MagicMirror
       },
 
     ```
-
+4. restart PM
 ## Config Options
 
 | **Option** | **Default** | **Description** |
