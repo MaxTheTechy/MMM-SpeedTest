@@ -78,6 +78,7 @@ The error indicates that the lzma-native dependency required by the speedtest-ne
 Steps to Resolve
 1. Rebuild Native Modules
 You need to rebuild lzma-native for electron. Run the following commands in your MagicMirror directory:
+
     ```
 cd ~/MagicMirror
 npm install
